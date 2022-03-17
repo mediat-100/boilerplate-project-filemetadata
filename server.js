@@ -17,7 +17,7 @@ app.get("/", function (req, res) {
 	res.sendFile(process.cwd() + "/views/index.html");
 });
 
-app.post("/upload", function (req, res) {
+app.post("/api/fileanalyse", function (req, res) {
 	if (req.files.upfile) {
     let { name, mimetype, size } = req.files.upfile
 		res.status(200).json({

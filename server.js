@@ -17,13 +17,14 @@ app.get("/", function (req, res) {
 	res.sendFile(process.cwd() + "/views/index.html");
 });
 
+// endpoint
 app.post("/api/fileanalyse", function (req, res) {
 	if (req.files.upfile) {
-    let { name, mimetype, size } = req.files.upfile
+		let { name, mimetype, size } = req.files.upfile;
 		res.status(200).json({
-			"name": name,
-			"type": mimetype,
-			"size": size,
+			name,
+			mimetype,
+			size,
 		});
 	}
 });
